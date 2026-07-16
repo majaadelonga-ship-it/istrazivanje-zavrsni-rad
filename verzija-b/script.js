@@ -1,11 +1,14 @@
 const EXPOSURE_TIME_SECONDS = 15;
 
-// Ovdje kasnije stavi link na drugu anketu ili istu anketu s uvjetom "niska kognitivna lakoća".
-const SURVEY_URL = "";
+const GOOGLE_FORM_BASE = "https://docs.google.com/forms/d/e/1FAIpQLSdd7dqRbQc9rAXnuldpGfuwVG5i14yQWECWvkmdeObzpEA-EQ/viewform";
+const GROUP_ENTRY_ID = "entry.2037905476";
+const GROUP_VALUE = "B"; // ova stranica = verzija B (niska kognitivna lakoća)
+
+const SURVEY_URL = `${GOOGLE_FORM_BASE}?usp=pp_url&${GROUP_ENTRY_ID}=${GROUP_VALUE}`;
 
 const timerBar = document.getElementById("timerBar");
-timerBar.style.transition = `transform ${EXPOSURE_TIME_SECONDS}s linear`;
 
+timerBar.style.transition = `transform ${EXPOSURE_TIME_SECONDS}s linear`;
 requestAnimationFrame(() => {
   timerBar.style.transform = "scaleX(0)";
 });
@@ -15,10 +18,3 @@ setTimeout(() => {
     window.location.href = SURVEY_URL;
   }
 }, EXPOSURE_TIME_SECONDS * 1000);
-
-document.querySelectorAll("button").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    console.log("Klik na gumb u verziji niske kognitivne lakoće");
-  });
-});
