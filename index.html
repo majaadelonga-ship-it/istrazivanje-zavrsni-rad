@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Auralis Buds</title>
+  <script>
+    // Nasumičan odabir grupe (50/50) i trenutačno preusmjeravanje.
+    // location.replace() se koristi umjesto location.href kako sudionik
+    // ne bi mogao gumbom "natrag" vratiti na ovu stranicu.
+    (function () {
+      var grupa = Math.random() < 0.5 ? "a" : "b";
+      var odrediste = grupa === "a" ? "verzija-a/index.html" : "verzija-b/index.html";
+      window.location.replace(odrediste);
+    })();
+  </script>
+</head>
+<body>
+  <p>Učitavanje stranice...</p>
+</body>
+</html>
