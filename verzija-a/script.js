@@ -1,9 +1,11 @@
 // Postavke eksperimenta
 const EXPOSURE_TIME_SECONDS = 15;
 
-// Ovdje kasnije zalijepi link na Google Forms / Qualtrics / anketu.
-// Primjer: const SURVEY_URL = "https://forms.gle/...";
-const SURVEY_URL = "";
+const GOOGLE_FORM_BASE = "https://docs.google.com/forms/d/e/1FAIpQLSdd7dqRbQc9rAXnuldpGfuwVG5i14yQWECWvkmdeObzpEA-EQ/viewform";
+const GROUP_ENTRY_ID = "entry.2037905476";
+const GROUP_VALUE = "A"; // ova stranica = verzija A (visoka kognitivna lakoća)
+
+const SURVEY_URL = `${GOOGLE_FORM_BASE}?usp=pp_url&${GROUP_ENTRY_ID}=${GROUP_VALUE}`;
 
 // Vizualni timer na vrhu stranice
 const timerBar = document.getElementById("timerBar");
@@ -12,8 +14,7 @@ requestAnimationFrame(() => {
   timerBar.style.transform = "scaleX(0)";
 });
 
-// Automatsko preusmjeravanje nakon 15 sekundi.
-// Trenutno je isključeno jer SURVEY_URL nije upisan.
+// Automatsko preusmjeravanje nakon 15 sekundi na anketu, s već upisanom grupom.
 setTimeout(() => {
   if (SURVEY_URL) {
     window.location.href = SURVEY_URL;
