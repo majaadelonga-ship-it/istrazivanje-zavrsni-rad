@@ -16,6 +16,11 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -25,6 +30,11 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .page-timer {
@@ -100,16 +110,16 @@ body {
 }
 
 h1 {
-  font-size:92px;
-  letter-spacing:-5px;
-  line-height:.95;
+  font-size: clamp(40px, 9vw, 92px);
+  letter-spacing: -2px;
+  line-height: .95;
 }
 
 .hero__lead {
   max-width: 560px;
   margin-top: 26px;
   color: #3d3d42;
-  font-size: clamp(20px, 2.2vw, 27px);
+  font-size: clamp(18px, 2.2vw, 27px);
   line-height: 1.35;
 }
 
@@ -118,6 +128,7 @@ h1 {
   align-items: center;
   gap: 22px;
   margin-top: 34px;
+  flex-wrap: wrap;
 }
 
 .button {
@@ -170,8 +181,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 85vw);
+  height: min(500px, 85vw);
   background: radial-gradient(circle, #fafafa 0%, #f2f2f2 100%);
   border-radius: 40px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
@@ -211,7 +222,7 @@ h1 {
 .split-section h2,
 .specs-section h2,
 .buy-box h2 {
-  font-size: clamp(36px, 4.4vw, 58px);
+  font-size: clamp(30px, 4.4vw, 58px);
   line-height: 1.05;
   letter-spacing: -2px;
 }
@@ -437,5 +448,32 @@ h1 {
   .buy-box__action {
     justify-content: center;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 48px 6%;
+  }
+
+  .hero__lead {
+    font-size: 18px;
+  }
+
+  .trust-row span {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .intro, .features, .split-section, .specs-section, .reviews, .buy-box {
+    padding: 56px 6%;
+  }
+
+  .review-card {
+    padding: 28px 20px;
+  }
+
+  .rating {
+    font-size: 32px;
   }
 }
