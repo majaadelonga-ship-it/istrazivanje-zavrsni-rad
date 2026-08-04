@@ -2,19 +2,98 @@
 <html lang="hr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Auralis Buds</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .consent-box {
+      max-width: 620px;
+      width: 100%;
+      padding: 40px;
+      border: 1px solid #e9e9ec;
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+    }
+
+    .consent-box h1 {
+      font-size: 24px;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .consent-box p {
+      color: #3d3d42;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .consent-box button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      width: 100%;
+      margin-top: 12px;
+      padding: 13px 27px;
+      border: none;
+      border-radius: 999px;
+      background: #111111;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .consent-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+    }
+
+    .consent-box .fine-print {
+      margin-top: 20px;
+      color: #777777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="consent-box">
+    <h1>Poštovani/poštovana,</h1>
+    <p>Pozivam Vas na sudjelovanje u istraživanju koje se provodi u sklopu završnog rada na Sveučilištu Algebra Bernays. Cilj je ispitati kako korisnici doživljavaju web sučelja.</p>
+    <p>Sudjelovanje je dobrovoljno i anonimno, a podaci se koriste isključivo u znanstvene svrhe, prikazani samo na skupnoj razini. Nakon što kliknete "Slažem se i želim sudjelovati", bit će Vam prikazana web-stranica u trajanju od 20 sekundi, nakon čega slijedi kratka anketa. Cijeli postupak traje oko 5 minuta, a u svakom trenutku možete odustati zatvaranjem prozora.</p>
+    <button id="consentButton">Slažem se i želim sudjelovati</button>
+    <p class="fine-print">Klikom na gumb potvrđujete pristanak na sudjelovanje u istraživanju.</p>
+  </div>
+
   <script>
-    // Nasumičan odabir grupe (50/50) i trenutačno preusmjeravanje.
-    // location.replace() se koristi umjesto location.href kako sudionik
-    // ne bi mogao gumbom "natrag" vratiti na ovu stranicu.
-    (function () {
+    document.getElementById("consentButton").addEventListener("click", function () {
       var grupa = Math.random() < 0.5 ? "a" : "b";
       var odrediste = grupa === "a" ? "verzija-a/index.html" : "verzija-b/index.html";
       window.location.replace(odrediste);
-    })();
+    });
   </script>
-</head>
-<body>
-  <p>Učitavanje stranice...</p>
 </body>
 </html>
