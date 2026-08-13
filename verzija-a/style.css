@@ -477,3 +477,15 @@ h1 {
     font-size: 32px;
   }
 }
+
+.breadcrumb {
+  padding: 10px 8%;
+  color: var(--muted);
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
