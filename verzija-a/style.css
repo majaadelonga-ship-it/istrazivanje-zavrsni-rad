@@ -334,6 +334,7 @@ h1 {
 
 .reviews {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -477,6 +478,11 @@ h1 {
     font-size: 32px;
   }
 }
+
+/* ============================================
+   DODANO: izjednačavanje sadržaja s verzijom B
+   (nema izmjena postojećih pravila iznad ove linije)
+   ============================================ */
 
 .breadcrumb {
   padding: 10px 8%;
