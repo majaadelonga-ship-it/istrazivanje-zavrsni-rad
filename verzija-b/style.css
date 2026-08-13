@@ -381,3 +381,26 @@ footer {
     display: none;
   }
 }
+
+.eyebrow-text {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #e60000;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 4px;
+}
+
+.lead-text {
+  margin: 6px 0;
+  font-size: 13px;
+  color: #444;
+}
+
+.reviewer {
+  display: block;
+  margin-top: 6px;
+  color: #666;
+  font-size: 11px;
+}
